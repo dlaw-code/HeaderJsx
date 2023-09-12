@@ -1,37 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from '../components/Header'
+import Header from "../components/Header";
+import Entry from "../components/Entry";
+import entries from "../components/entries";
+import Login from "../components/Login";
+import "./App.css";
+import Navbar from "../components/Navbar";
 
-function App() {
-  const [count, setCount] = useState(0)
+const createEntry = (entry) => {
+  return (
+    <Entry
+      key={entry.id}
+      emoji={entry.emoji}
+      name={entry.name}
+      meaning={entry.meaning}
+    />
+  );
+};
+
+let isLoggedIn = false;
+
+const App = () => {
+  // Group entries into rows with 3 columns each
+  const rows = [];
+  for (let i = 0; i < entries.length; i += 3) {
+    const rowEntries = entries.slice(i, i + 3);
+    rows.push(
+      <div className="row" key={i}>
+        {rowEntries.map(createEntry)}
+      </div>
+    );
+  }
 
   return (
-    <>
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+    <div className="another">
+      {/* <Navbar /> */}
       <Header />
-    </>
-  )
-}
+      <div className="containers">{rows}</div>
 
-export default App
+      {/* {isLoggedIn? <h1>Welcome to the future</h1> : <Login />} */}
+    </div>
+  );
+};
+
+export default App;

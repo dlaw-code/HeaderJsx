@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set a fixed height to the body for centering */
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+.containers {
+    display: flex;
+    justify-content: space-between;
+    
+    gap: 2rem;
+    width: 100%; /* Ensure the containers take full available width */
+    max-width: 1200px; /* Optional: Set a maximum width for the containers */
+    margin: 0 auto; /* Center the containers horizontally */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding doesn't affect container's width */
+  }
+.con {
+  background-color: tomato;
+  padding: 20px;
+  text-align: center;
+  line-height: 2;
+  flex: 1; /* Distribute available space equally among .con items */
+  min-width: 0; /* Override minimum width restriction */
+}
+
+.meaning{
+  font-size: 90%;
+}

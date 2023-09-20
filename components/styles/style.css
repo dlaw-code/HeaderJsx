@@ -1,80 +1,83 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
   background-color: #eee;
 }
 
-header{
-  /* height: 100vh; */
+header {
   background-size: cover;
   background-position: center;
-  
 }
 
-
-.container{
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  align-content: center;
+  margin-bottom: 100px;
+  justify-items: center;
+  color: black;
+}
+.secondContainer {
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  gap: 5rem;
-  height: 100vh;
-  padding-top: 3rem;
+  flex: 1;
+  justify-content: center;
+}
+.author-img {
+ object-fit: cover;
 }
 
-.container .author-img {
-  
-  max-width: 100%; /* Ensures the image doesn't exceed its container */
-  height: auto; /* Maintains aspect ratio */
+.text-containers {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
- .text-containers{
-  /* line-height: 2.5; */
-  padding: 10px;
-}
-
-input{
-  padding: 10px;
-  width: 100%;
+input {
+  padding: 20px;
+  width: 500px;
   margin-bottom: 20px;
-  border-radius: 10px;
-  border: 2px solid #eee;                                
+  border-radius: 8px;
+  border: 1px solid #eee;
 }
 
+*:focus {
+  outline: none;
+}
 
-
-*:focus{outline: none;}
-
-.btn{ 
+.btn {
   background-color: #34495e;
   color: #fff;
-  width: 100%;
+  border: none;
+  outline: none;
+  width: 500px;
+  padding: 20px;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #fff;
   color: #000;
-  border: 2px solid #34495e;
+  border: 1px solid #34495e;
+  transition: all .3s ease-in-out;
+  opacity: 0.6;
 }
 
-
-.additional-image{
+.additional-image {
   display: none;
 }
 
-ul li{
+ul li {
   list-style: none;
 }
 
-.fa-check{
+.fa-check {
   margin-right: 10px;
   background-color: tomato;
   color: #fff;
@@ -83,48 +86,41 @@ ul li{
   font-size: 10px;
 }
 
-
-
-
-
 /* Media queries */
 @media (max-width: 375px) {
-  body{ 
-      font-size: 14px;
-      overflow-x: hidden;
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
   }
-  
-  .container{
+
+  .container {
     display: flex;
     flex-direction: column-reverse;
     gap: 1rem;
   }
 
-  input{
+  input {
     padding: 10px;
     width: 100%;
   }
 
-
-  .header{
-      font-size: 2rem;
+  .header {
+    font-size: 2rem;
   }
-  .container .text-containers{
-      padding: 2px
+  .container .text-containers {
+    padding: 2px;
   }
 
   .container .additional-image {
     display: block; /* Show the additional image */
     width: 100%;
-    
   }
 
   .container .author-img {
     display: none;
   }
-  
-  h1{
-      font-size: 30px;
+
+  h1 {
+    font-size: 30px;
   }
-  
 }

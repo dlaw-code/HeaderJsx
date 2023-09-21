@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles/style.css";
 
 const Header = () => {
@@ -12,18 +11,18 @@ const Header = () => {
 
         <ul>
           <li>
-            <i class="fa-solid fa-check"></i>Product discovery and building what
-            matters
+            <i className="fa-solid fa-check"></i>Product discovery and building
+            what matters
           </li>
           <li>
-            <i class="fa-solid fa-check"></i>Measuring to ensure updates are a
-            success
+            <i className="fa-solid fa-check"></i>Measuring to ensure updates are
+            a success
           </li>
           <li>
-            <i class="fa-solid fa-check"></i>And much more!
+            <i className="fa-solid fa-check"></i>And much more!
           </li>
         </ul>
-
+        <br />
         <h3>Email Address</h3>
         <div className="buttons">
           <input type="email" placeholder="email@company.com" />
@@ -32,7 +31,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div>
+      <div className="secondContainer">
         <img
           src="src/assets/illustration-sign-up-desktop.svg"
           alt=""
@@ -40,12 +39,12 @@ const Header = () => {
         />
       </div>
 
-      <div class="additional-image">
+      {/* <div className="additional-image">
         <img
           src="src/assets/illustration-sign-up-mobile.svg"
           alt="Additional Image"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

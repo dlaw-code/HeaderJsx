@@ -1,9 +1,7 @@
 import Header from "../components/Header";
 import Entry from "../components/Entry";
 import entries from "../components/entries";
-import Login from "../components/Login";
 import "./App.css";
-import Navbar from "../components/Navbar";
 
 const createEntry = (entry) => {
   return (
